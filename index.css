@@ -207,21 +207,35 @@
             font-size: 2.2rem;
         }
 
+        /* Grid com menor espaçamento */
         .grid-refs {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            /* pequeno espaçamento */
+            justify-items: center;
         }
 
-        .ref-card img {
+        /* Card do vídeo */
+        .ref-card {
             width: 100%;
+            max-width: 280px;
+        }
+
+        /* Vídeo vertical */
+        .ref-card video {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            /* força formato vertical */
+            object-fit: cover;
             border-radius: 20px;
             box-shadow: var(--shadow);
             border-bottom: 8px solid var(--red);
             transition: 0.3s;
         }
 
-        .ref-card img:hover {
+        /* Efeito hover */
+        .ref-card video:hover {
             transform: scale(1.03);
         }
 
@@ -240,6 +254,50 @@
             border-radius: 15px;
             border: 4px solid var(--white);
             box-shadow: var(--shadow);
+        }
+
+        .biography {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .bio-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .bio-image img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border-bottom: 8px solid var(--blue-light);
+        }
+
+        .bio-text h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .bio-text p {
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .bio-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .bio-image img {
+                margin: 0 auto;
+            }
         }
 
         /* FOOTER */
